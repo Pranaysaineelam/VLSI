@@ -1,0 +1,7 @@
+report_global_timing
+puts "ENTER DELAY TPYE MIN OR MAX"
+gets stdin delaytype
+puts "ENTER MAX PATH OR NO OF PATHS VIOLATED "
+gets stdin num
+report_timing -delay_type $delaytype -max_paths $num > gettingbottleneckcell.txt
+sh awk '{print \$1}' gettingbottleneckcell.txt | sort | uniq -c | sort
