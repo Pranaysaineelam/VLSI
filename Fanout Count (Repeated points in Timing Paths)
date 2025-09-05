@@ -1,0 +1,26 @@
+report_global_timing
+puts "ENTER DELAY TYPE MIN OR MAX"
+gets stdin delaytype
+puts "SEE PATH TYPE WHAT U NEED 
+reg to reg
+in to reg
+reg to out
+in to out"
+if 0 {
+from [all_registers ] -to [all_registers ]
+from [all_inputs ] -to [all_registers]
+from [all_registers ] -to [all_outputs ]
+from [all_inputs ] -to [all_outputs ]}
+puts "ENTER PATH TYPE"
+gets stdin pathtype
+puts "ENTER MAX PATH OR NO OF PATHS VIOLATED "
+gets stdin num
+puts " GIVE THE FILE NAME"
+ gets stdin filename
+report_timing - $pathtype -delay_type $delaytype -max_paths $num > $filename
+set point "startpoint"
+if { $point eq "startpoint"} {
+sh grep -i 'startpoint' $filename | sort | uniq -c 
+} else {
+sh grep -i 'endpoint' $filename | sort | uniq -c 
+}
