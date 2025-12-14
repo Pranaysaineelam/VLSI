@@ -1,0 +1,9 @@
+puts " Go to directory where the actual report present"
+
+open " log/report file"
+
+sh awk '/warn/' log/report.file > warn.file
+#or
+sh awk '/violation/' log/report.file > violation.file
+
+sh awk '{print \$1,\$2,....}' warn.file
