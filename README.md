@@ -8,4 +8,5 @@ Step 7. Placement
 Step 8. Clock tree synthesis
 Step 9. Routing
 Step 10. Final Verification
+EMIR PV STA
 Step 11. GDS II 
